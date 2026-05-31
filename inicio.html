@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clínica Dental Ramírez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --azul: #0A3D62;
+            --celeste: #38BDF8;
+            --celeste-claro: #E0F2FE;
+            --blanco: #f0f0f0;
+            --gris: #64748B;
+
+             --logo-header: 75px;
+    --logo-footer: 80px;
+}
+
+
+        
+        
+
+   
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--celeste-claro);
+            color: var(--azul);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: var(--blanco);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+          display: flex;
+    align-items: center;
+    gap: 12px;
+        }
+
+        .logo img {
+           height: var(--logo-header);
+        }
+
+        .logo span {
+            color: var(--celeste);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--azul);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--celeste);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, #0A3D62, #38BDF8);
+            padding: 90px 20px;
+            color: white;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            color: #E0F2FE;
+        }
+
+        .hero-buttons a {
+            display: inline-block;
+            margin-right: 15px;
+            padding: 14px 34px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--blanco);
+            color: var(--azul);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--celeste-claro);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.15);
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 420px;
+        }
+
+        /* ===== SERVICIOS ===== */
+        .servicios {
+            background-color: #0A3D62;
+            padding: 80px 20px;
+        }
+
+        .servicios h3 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .servicios-grid {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .servicio-card {
+            background-color: var(--celeste-claro);
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .servicio-card h4 {
+            margin-bottom: 12px;
+            color: var(--azul);
+        }
+
+        .servicio-card p {
+            color: var(--gris);
+            font-size: 15px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #f0f0f0;
+            color: white;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--celeste);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-contacto, .mapa, .footer-logo {
+            flex: 1 1 300px;
+        }
+
+        .footer-contacto h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #0A3D62;
+        }
+
+        .footer-contacto p {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #0A3D62;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            max-width: 150px; /* Ajustable a tu gusto */
+            height: 75px;
+        }
+
+        .mapa {
+            margin-top: 15px;
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+     
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h2 {
+                font-size: 34px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .mapa {
+                max-width: 100%;
+                height: 250px;
+                margin: auto;
+            }
+
+            .footer-logo {
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="logo_clinica.jpg" alt="Clínica Dental Ramírez">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="https://api.whatsapp.com/send/?phone=59171803010&text&type=phone_number&app_absent=0" target="_blank">Programar Cita</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="iniciarSesion.html">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-text">
+            <h2>Sonrisas saludables con tecnología moderna</h2>
+            <p>
+                La Clínica Dental Ramírez integra un sistema web innovador para la
+                programación de citas y la administración segura de historias clínicas
+                odontológicas, mejorando la atención y la experiencia del paciente.
+            </p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">Programar Cita</a>
+                <a href="#" class="btn-outline">Iniciar Sesión</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/2913/2913600.png" alt="Odontología">
+        </div>
+    </div>
+</section>
+
+<section class="servicios">
+    <h3>Nuestros Servicios</h3>
+    <div class="servicios-grid">
+        <div class="servicio-card">
+            <h4>Odontología General</h4>
+            <p>Atención integral para el cuidado bucal.</p>
+        </div>
+        <div class="servicio-card">
+            <h4>Limpieza Dental</h4>
+            <p>Prevención y control de enfermedades.</p>
+        </div>
+        <div class="servicio-card">
+            <h4>Extracciones</h4>
+            <p>Procedimientos seguros y confiables.</p>
+        </div>
+        <div class="servicio-card">
+            <h4>Tratamientos Preventivos</h4>
+            <p>Diagnóstico y seguimiento continuo.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <!-- Contacto -->
+        <div class="footer-contacto">
+            <h3>Contáctanos</h3>
+            <p><strong>📍 Dirección:</strong> Calle Bush esquina Frías</p>
+            <p>Llallagua-Potosí, Bolivia</p>
+            <p><strong>📞 Teléfono:</strong> +591 71803010</p>
+            <p><strong>⏰ Horario:</strong> Lunes a Viernes | 09:00 – 21:00</p>
+            <p>Sábado a Domingo | 09:00 – 12:00 y 15:00 – 18:00</p>
+        </div>
+
+        <!-- LOGO EN EL MEDIO -->
+        <div class="footer-logo">
+            <img src="logo_clinica.jpg" alt="Clínica Dental Ramírez">
+        </div>
+
+        <!-- Google Maps -->
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3785.3524464384604!2d-66.59017492481078!3d-18.42229998265226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDI1JzIwLjMiUyA2NsKwMzUnMTUuNCJX!5e0!3m2!1ses-419!2sbo!4v1766290855069!5m2!1ses-419!2sbo" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    
+</footer>
+
+</body>
+</html>
